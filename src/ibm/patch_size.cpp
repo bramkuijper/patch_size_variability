@@ -401,7 +401,7 @@ void PatchSize::write_data()
     for (unsigned type_idx{0}; type_idx < 2; ++type_idx)
     {
         meanz[type_idx]/=n;
-        varz[type_idx] = meanz[type_idx] * meanz[type_idx] - varz[type_idx]/n;
+        varz[type_idx] = varz[type_idx]/n - meanz[type_idx] * meanz[type_idx];
 
         data_file << (meanz[type_idx]/n) << ";" << varz[type_idx] << ";";
     }

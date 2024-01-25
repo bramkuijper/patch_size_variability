@@ -3,13 +3,13 @@
 import numpy as np
 import datetime
 
-baseline_mortality = np.linspace(0.01,1.0,num=50)
+baseline_mortality = np.linspace(0.01,1.0,num=20)
 
 n = [[5,5]]
 
 d = 0.5
 
-bfec = np.linspace(0.01,14,num=30)
+bfec = np.linspace(0.01,14,num=20)
 
 exe = "patch_size.exe"
 
