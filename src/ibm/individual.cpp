@@ -28,8 +28,14 @@ Individual::Individual(Individual const &parent,
     {
         if (uniform(rng_r) < par.mu_z[locus_idx])
         {
-            std::normal_distribution mutational_effect_size{0.0,par.sdmu};
-            z[locus_idx] = std::clamp(z[locus_idx] + mutational_effect_size(rng_r),0.0,1.0);
+            std::normal_distribution 
+                mutational_effect_size{0.0,par.sdmu};
+
+            z[locus_idx] = std::clamp(
+                    z[locus_idx] + 
+                        mutational_effect_size(rng_r),
+                        par.zbound[0],par.zbound[1]
+                        );
         }
     }
 } // end birth constructor

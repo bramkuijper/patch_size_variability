@@ -30,6 +30,8 @@ PatchSize::PatchSize(Parameters const &params) :
 
         fill_vacancies();
 
+        replace();
+
         if (time_step % par.data_interval == 0 ||
                 time_step == par.max_time_steps)
         {
@@ -69,6 +71,9 @@ void PatchSize::express_help()
                 ++ind_iterator)
         {
             z_ind = ind_iterator->z[patch_type];
+
+            assert(z_ind >= par.zbound[0]);
+            assert(z_ind <= par.zbound[1]);
             z_patch += z_ind;
         }
 
@@ -100,12 +105,17 @@ void PatchSize::fill_vacancies()
         // for each newborn build a sampling distribution
         patch_type = patch_iterator->patch_type;
 
+        assert(patch_iterator->breeders_tplus1.size() <= 
+                par.n[patch_type]);
+
         // calculate new offspring
         n_new_breeders = par.n[patch_type] - 
             patch_iterator->breeders_tplus1.size();
 
         // bounds checking
-        assert(n_new_breeders < par.n[patch_type]);
+        assert(n_new_breeders <= par.n[patch_type]);
+
+        fecundity_weightings_local.clear();
 
         // new recruits needed!
         if (n_new_breeders > 0)
@@ -183,6 +193,11 @@ void PatchSize::fill_vacancies()
                             rng_r,
                             par);
 
+                    assert(Kid.z[0] >= par.zbound[0]);
+                    assert(Kid.z[0] <= par.zbound[1]);
+                    assert(Kid.z[1] >= par.zbound[0]);
+                    assert(Kid.z[1] <= par.zbound[1]);
+
                     patch_iterator->breeders_tplus1.push_back(Kid);
                 }
                 else
@@ -205,17 +220,22 @@ void PatchSize::fill_vacancies()
                             rng_r,
                             par);
                     
+                    assert(Kid.z[0] >= par.zbound[0]);
+                    assert(Kid.z[0] <= par.zbound[1]);
+                    assert(Kid.z[1] >= par.zbound[0]);
+                    assert(Kid.z[1] <= par.zbound[1]);
+
                     patch_iterator->breeders_tplus1.push_back(Kid);
                 }
             } // end for newborn idx
         } // end if n_new_breeders
 
         // check whether we have the correct size here
-        assert(patch_iterator->breeders.size() == 
+        assert(patch_iterator->breeders_tplus1.size() == 
                 par.n[patch_iterator->patch_type]);
 
     } // end for patch_iterator
-} // end reproduce()
+} // end fill_vacancies()
 
 void PatchSize::replace()
 {
@@ -223,8 +243,10 @@ void PatchSize::replace()
             patch_iterator != metapop.end(); 
             ++patch_iterator)
     {
-        patch_iterator->breeders = 
-            patch_iterator->breeders_tplus1;
+        assert(patch_iterator->breeders_tplus1.size() > 0);
+        assert(patch_iterator->breeders_tplus1.size() == par.n[patch_iterator->patch_type]);
+
+        patch_iterator->breeders = patch_iterator->breeders_tplus1;
     }
 } // end replace()
 
@@ -232,7 +254,7 @@ void PatchSize::replace()
 void PatchSize::change_size()
 {
     // aux variable storing the current type (small, large)
-    PatchState current_patch_type;
+    PatchState current_patch_type, new_patch_type;
 
     // aux variable storing current count of breeders
     unsigned n_surviving_breeders;
@@ -253,8 +275,7 @@ void PatchSize::change_size()
         if (uniform(rng_r) < par.switch_rate[current_patch_type])
         {
             // switch patch state
-            current_patch_type = 
-                static_cast<PatchState>(!current_patch_type);
+            current_patch_type = current_patch_type == small ? large : small;
 
             // check whether we need to further reduce number of adult 
             // breeders
@@ -276,9 +297,11 @@ void PatchSize::change_size()
                             + breeder_to_delete(rng_r));
                 }
 
-                assert(metapop[patch_idx].breeders_tplus1.size() == 
-                        par.n[current_patch_type]);
+                assert(metapop[patch_idx].breeders_tplus1.size() 
+                        == par.n[current_patch_type]);
             }
+
+            metapop[patch_idx].patch_type = current_patch_type;
         }
     } // end for
 } // end change_size()
@@ -378,7 +401,7 @@ void PatchSize::write_data()
     for (unsigned type_idx{0}; type_idx < 2; ++type_idx)
     {
         meanz[type_idx]/=n;
-        varz[type_idx] = meanz[type_idx] - varz[type_idx]/n;
+        varz[type_idx] = meanz[type_idx] * meanz[type_idx] - varz[type_idx]/n;
 
         data_file << (meanz[type_idx]/n) << ";" << varz[type_idx] << ";";
     }
