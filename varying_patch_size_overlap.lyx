@@ -1,0 +1,717 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{mathpazo}
+%\usepackage{newpxtext,newpxmath}
+\usepackage{amsmath}
+\usepackage{color}
+\definecolor{slateblue}{RGB}{17, 83,128}
+\usepackage{doi}
+\allowdisplaybreaks
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "citecolor=slateblue,linkcolor=slateblue,urlcolor=slateblue"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2.5cm
+\rightmargin 2.5cm
+\bottommargin 2.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+The evolution of helping in variable environments when generations overlap
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section
+Key things to consider:
+\end_layout
+
+\begin_layout Standard
+1.
+ Analyze effect of overlapping generations
+\end_layout
+
+\begin_layout Standard
+2.
+ heterogeneous groups effect - birth effects
+\end_layout
+
+\begin_layout Standard
+3.
+ differential dispersal
+\end_layout
+
+\begin_layout Standard
+4.
+ mortality v fecundity gifts
+\end_layout
+
+\begin_layout Standard
+5.
+ life cycle differences
+\end_layout
+
+\begin_layout Standard
+First figure out how mortality v fecunidyt 
+\end_layout
+
+\begin_layout Section
+Life cycle
+\end_layout
+
+\begin_layout Subsection
+Reproductive success through philopatric offspring
+\end_layout
+
+\begin_layout Standard
+Following eqns.
+ A4-A6 from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rodrigues2013"
+literal "false"
+
+\end_inset
+
+, the expected number of mutant individuals who live in a big patch at time
+ 
+\begin_inset Formula $t+1$
+\end_inset
+
+ given that the focal mutant lives in a big patch at time 
+\begin_inset Formula $t$
+\end_inset
+
+ is given by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+E_{B\rightarrow B}^{\text{phil}} & =1-\mu_{B}\left(z_{B}^{\bullet}\right)+\frac{n_{B}\mu_{B}\left(z_{B}^{\circ},z_{B}^{\circ}\right)\left(1-d_{B}\right)f\left(z_{B}^{\bullet},z_{B}^{\circ}\right)}{n_{B}\left(1-d_{B}\right)f\left(z_{B}^{\circ},z_{B}^{\circ}\right)+p_{B}n_{B}d_{B}f\left(z_{B},z_{B}\right)+p_{L}n_{L}d_{L}f\left(z_{L},z_{L}\right)}.
+\end{align*}
+
+\end_inset
+
+Next, we calculate the expected number 
+\begin_inset Formula $E_{B\rightarrow L}^{\text{phil}}$
+\end_inset
+
+ of philopatric mutant individauls who are able to remain or establish as
+ breeders when the patch transitions from a big patch to a little patch.
+ To this end, the probability 
+\begin_inset Formula $\mathcal{P}\left(k\mid n_{B},\mu_{B}\left(z_{B}^{\circ},z_{B}^{\circ}\right)\right)$
+\end_inset
+
+ that 
+\begin_inset Formula $0\leq k\leq n_{B}$
+\end_inset
+
+ surviving breeders will be sampled (potentially including the focal) out
+ of the original number of 
+\begin_inset Formula $n_{B}$
+\end_inset
+
+ breeders according to their survival probability 
+\begin_inset Formula $1-\mu_{B}(z_{B}^{\circ},z_{B}^{\circ})$
+\end_inset
+
+ is given by the binomial distribution
+\begin_inset Formula 
+\begin{align*}
+\mathcal{P}\left(k\mid n_{B},\mu_{B}\left(z_{B}^{\circ},z_{B}^{\circ}\right)\right) & ={n_{B} \choose k}\left[1-\mu_{B}\left(z_{B}^{\circ},z_{B}^{\circ}\right)\right]^{k}\left[\mu_{B}\left(z_{B}^{\circ},z_{B}^{\circ}\right)\right]^{n_{B}-k}.
+\end{align*}
+
+\end_inset
+
+If 
+\begin_inset Formula $k<n_{L}$
+\end_inset
+
+, we sample new recruits to fill the 
+\begin_inset Formula $n_{L}-k$
+\end_inset
+
+ vacancies.
+ If 
+\begin_inset Formula $k=n_{L}$
+\end_inset
+
+, all 
+\begin_inset Formula $n_{L}$
+\end_inset
+
+ breeding positions are occupied by surviving adults and no new recruits
+ are sampled.
+ If 
+\begin_inset Formula $n_{L}<k\leq n_{B}$
+\end_inset
+
+, then surviving adults compete among themselves for breeding positions.
+ The expected number 
+\begin_inset Formula $E_{B\rightarrow L}^{\text{phil}}$
+\end_inset
+
+ of mutant individuals who live in a little patch at time 
+\begin_inset Formula $t+1$
+\end_inset
+
+ given that the focal mutant lives in a big patch at time 
+\begin_inset Formula $t$
+\end_inset
+
+ is then given by
+\begin_inset Formula 
+\begin{align*}
+E_{B\rightarrow L}^{\text{phil}} & =\sum_{k=1}^{n_{B}}\mathcal{P}\left(k-1\mid n_{B}-1,\mu_{B}\left(z_{B}^{\circ},z_{B}^{\circ}\right)\right)\left(1-\mu_{B}\left(z_{B}^{\bullet}\right)\right)\left[\mathrm{min}\left\{ \frac{n_{L}}{k},1\right\} +\frac{\delta_{k\leq n_{\mathrm{L}}}\left(n_{L}-k\right)\left(1-d_{B}\right)f\left(z_{B}^{\bullet},z_{B}^{\circ}\right)}{n_{B}\left(1-d_{B}\right)f\left(z_{B}^{\circ},z_{B}^{\circ}\right)+p_{B}n_{B}d_{B}f\left(z_{B},z_{B}\right)+p_{L}n_{L}d_{L}f\left(z_{L},z_{L}\right)}\right]\\
+ & +\sum_{k=0}^{n_{B}-1}\mathcal{P}\left(k\mid n_{B}-1,\mu_{B}\left(z_{B}^{\circ},z_{B}^{\circ}\right)\right)\mu_{B}\left(z_{B}^{\bullet}\right)\left[\frac{\delta_{k\leq n_{\mathrm{L}}}\left(n_{L}-k\right)\left(1-d_{B}\right)f\left(z_{B}^{\bullet},z_{B}^{\circ}\right)}{n_{B}\left(1-d_{B}\right)f\left(z_{B}^{\circ},z_{B}^{\circ}\right)+p_{B}n_{B}d_{B}f\left(z_{B},z_{B}\right)+p_{L}n_{L}d_{L}f\left(z_{L},z_{L}\right)}\right]
+\end{align*}
+
+\end_inset
+
+where the first line reflects the case in which the focal adult survives,
+ with probability 
+\begin_inset Formula $1-\mu_{B}\left(z_{B}^{\bullet}\right)$
+\end_inset
+
+, in which case it successfully competes with 
+\begin_inset Formula $k$
+\end_inset
+
+ adults (including itself) over 
+\begin_inset Formula $n_{L}$
+\end_inset
+
+ vacant breeding positions.
+ The 
+\begin_inset Formula $\mathrm{min}\{\}$
+\end_inset
+
+ denotes that if 
+\begin_inset Formula $n_{L}>k$
+\end_inset
+
+, the focal's probability of obtaining the vacant breeding position is 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ The second term in parentheses reflects competition by juveniles over the
+ 
+\begin_inset Formula $n_{L}-k$
+\end_inset
+
+ breeding positions that are vacant after adults compete over the 
+\begin_inset Formula $n_{L}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Calculating the expected number 
+\begin_inset Formula $E_{L\rightarrow B}^{\text{phil}}$
+\end_inset
+
+ of philopatric mutant individuals who are able to remain or establish as
+ breeders when the patch transitions from a little patch to a big patch
+ is more straightforward: in this case, all surviving breeders retain their
+ breeding position.
+ Any additional vacancies are filled by new recruits.
+ Hence we have 
+\begin_inset Formula 
+\begin{align*}
+E_{L\rightarrow B}^{\text{phil}} & =1-\mu_{L}\left(z_{L}^{\bullet},z_{L}^{\circ}\right)+\frac{\left[n_{B}-n_{L}+n_{L}\mu_{L}\left(z_{L}^{\circ},z_{L}^{\circ}\right)\right]\left(1-d_{L}\right)f\left(z_{L}^{\bullet},z_{L}^{\circ}\right)}{n_{L}\left(1-d_{L}\right)f\left(z_{L}^{\circ},z_{L}^{\circ}\right)+p_{B}n_{B}d_{B}f\left(z_{B},z_{B}\right)+p_{L}n_{L}d_{L}f\left(z_{L},z_{L}\right)}
+\end{align*}
+
+\end_inset
+
+Finally, we have the expected number 
+\begin_inset Formula $E_{L\rightarrow L}^{\bullet}$
+\end_inset
+
+ of philopatric mutant individuals who are able to remain or establish as
+ breeders when the patch remains little:
+\begin_inset Formula 
+\begin{align*}
+E_{L\rightarrow L}^{\text{phil}} & =1-\mu_{L}\left(z_{L}^{\bullet},z_{L}^{\circ}\right)+\frac{n_{L}\mu_{L}\left(z_{L}^{\circ},z_{L}^{\circ}\right)\left(1-d_{L}\right)f\left(z_{L}^{\bullet},z_{L}^{\circ}\right)}{n_{L}\left(1-d_{L}\right)f\left(z_{L}^{\circ},z_{L}^{\circ}\right)+p_{B}n_{B}\left(1-d_{B}\right)f\left(z_{B},z_{B}\right)+p_{L}n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Reproductive success through dispersing offspring
+\end_layout
+
+\begin_layout Standard
+To assess the fate of mutant offspring in a remote patch, whether the site
+ has recently been a large vs small patch becomes important, as this affects
+ the number of breeding positions available.
+ Using Bayes' Theorem, let 
+\begin_inset Formula $q_{U\mid V}$
+\end_inset
+
+ reflect the probability that a patch in environmental state 
+\begin_inset Formula $E_{t+1}=V$
+\end_inset
+
+ at time 
+\begin_inset Formula $t+1$
+\end_inset
+
+ was in state 
+\begin_inset Formula $E_{t}=U$
+\end_inset
+
+ at time 
+\begin_inset Formula $t$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+q_{U\rightarrow V} & =\Pr\left(E_{t}=U\mid E_{t+1}=V\right)=\frac{\Pr\left(E_{t+1}=V\mid E_{t}=U\right)\Pr\left(E_{t}=U\right)}{\Pr\left(E_{t+1}=V\right)}=\frac{p_{U}s_{U\rightarrow V}}{\sum_{x\in\{U,V\}}p_{x}s_{x\rightarrow V}}.
+\end{align*}
+
+\end_inset
+
+We then have
+\begin_inset Formula 
+\begin{align*}
+E_{B\rightarrow B}^{\text{disp}} & =d_{B}q_{B\rightarrow B}\frac{n_{B}\mu_{B}\left(z_{B},z_{B}\right)f\left(z_{B}^{\bullet},z_{B}^{\circ}\right)}{n_{B}\left(1-d_{B}\right)f\left(z_{B},z_{B}\right)+p_{B}n_{B}d_{B}f\left(z_{B},z_{B}\right)+p_{L}n_{L}d_{L}f\left(z_{L},z_{L}\right)}\\
+ & +d_{B}q_{L\rightarrow B}\frac{\left[n_{B}-n_{L}+n_{L}\mu_{L}\left(z_{L},z_{L}\right)\right]f\left(z_{B}^{\bullet},z_{B}^{\circ}\right)}{n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)+p_{B}n_{B}d_{B}f\left(z_{B},z_{B}\right)+p_{L}n_{L}d_{L}f\left(z_{L},z_{L}\right)}
+\end{align*}
+
+\end_inset
+
+Next, 
+\begin_inset Formula 
+\begin{align*}
+E_{B\rightarrow L}^{\text{disp}} & =d_{B}q_{B\rightarrow L}\sum_{k=0}^{n_{B}}\mathcal{P}\left(k\mid n_{B},\mu_{B}\left(z_{B},z_{B}\right)\right)\frac{\delta_{k\leq n_{\mathrm{L}}}\left(n_{L}-k\right)f\left(z_{B}^{\bullet},z_{B}^{\circ}\right)}{n_{B}\left(1-d_{B}\right)f_{B}\left(z_{B},z_{B}\right)+p_{B}n_{B}d_{B}f\left(z_{B},z_{B}\right)+p_{L}n_{L}d_{L}f\left(z_{L},z_{L}\right)}\\
+ & +d_{B}q_{L\rightarrow L}\frac{n_{L}\mu_{L}\left(z_{L},z_{L}\right)f\left(z_{B}^{\bullet},z_{B}^{\circ}\right)}{n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)+p_{B}n_{B}d_{B}f\left(z_{B},z_{B}\right)+p_{L}n_{L}d_{L}f\left(z_{L},z_{L}\right)},
+\end{align*}
+
+\end_inset
+
+And
+\begin_inset Formula 
+\begin{align*}
+E_{L\rightarrow B}^{\mathrm{disp}} & =d_{L}q_{B\rightarrow B}\frac{n_{B}\mu_{B}\left(z_{B},z_{B}\right)f\left(z_{L}^{\bullet},z_{L}^{\circ}\right)}{n_{B}\left(1-d_{B}\right)f\left(z_{B},z_{B}\right)+p_{B}n_{B}d_{B}f\left(z_{B},z_{B}\right)+p_{L}n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)}\\
+ & +d_{L}q_{L\rightarrow B}\frac{\left[n_{B}-n_{L}+n_{L}\mu_{L}\left(z_{L},z_{L}\right)\right]f\left(z_{L}^{\bullet},z_{L}^{\circ}\right)}{n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)+p_{B}n_{B}\left(1-d_{B}\right)f\left(z_{B},z_{B}\right)+p_{L}n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)}.
+\end{align*}
+
+\end_inset
+
+Finally,
+\begin_inset Formula 
+\begin{align*}
+E_{L\rightarrow L}^{\text{disp}} & =d_{L}q_{B\rightarrow L}\sum_{k=0}^{n_{L}}\mathcal{P}\left(k\mid n_{B},\mu_{L}\left(z_{L},z_{L}\right)\right)\frac{\left(n_{L}-k\right)f\left(z_{L}^{\bullet},z_{L}^{\circ}\right)}{n_{B}\left(1-d_{B}\right)f_{B}\left(z_{B},z_{B}\right)+p_{B}n_{B}\left(1-d_{B}\right)f\left(z_{B},z_{B}\right)+p_{L}n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)}\\
+ & +d_{L}q_{L\rightarrow L}\frac{n_{L}\mu_{L}\left(z_{L},z_{L}\right)f\left(z_{L}^{\bullet},z_{L}^{\circ}\right)}{n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)+p_{B}n_{B}\left(1-d_{B}\right)f\left(z_{B},z_{B}\right)+p_{L}n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)}.
+\end{align*}
+
+\end_inset
+
+From the above we can then compile the matrix 
+\begin_inset Formula $(e_{ij})\equiv\mathbf{E}$
+\end_inset
+
+ reflecting the expected number of focal alleles contained in individuals
+ that are successfully established in a patch in state 
+\begin_inset Formula $i\in B,L$
+\end_inset
+
+ resulting from a focal individual currently breeding in a patch in state
+ 
+\begin_inset Formula $j\in B,L$
+\end_inset
+
+.
+ We then have
+\begin_inset Formula 
+\begin{align*}
+\mathbf{E} & =\mathbf{E}^{\mathrm{phil}}+\mathbf{E}^{\mathrm{disp}},
+\end{align*}
+
+\end_inset
+
+where
+\begin_inset Formula 
+\begin{align*}
+\mathbf{E}^{\mathrm{i}} & =\left[\begin{array}{cc}
+E_{B\rightarrow B}^{\mathrm{i}} & E_{L\rightarrow B}^{\mathrm{i}}\\
+E_{B\rightarrow L}^{\mathrm{i}} & E_{L\rightarrow L}^{\mathrm{i}}
+\end{array}\right]
+\end{align*}
+
+\end_inset
+
+for 
+\begin_inset Formula $\mathrm{i}\in\mathrm{disp,phil}.$
+\end_inset
+
+ The expected fitness 
+\begin_inset Formula $\mathbf{W}$
+\end_inset
+
+ of the focal mutant is then the matrix product of the matrix 
+\begin_inset Formula $(s_{ij})\equiv\mathbf{S}$
+\end_inset
+
+ containing the probabilities 
+\begin_inset Formula $s_{j\rightarrow i}$
+\end_inset
+
+ that a patch may change in size and 
+\begin_inset Formula $\mathbf{E}$
+\end_inset
+
+ or
+\begin_inset Formula 
+\begin{align*}
+\mathbf{W} & =\mathbf{S}\mathbf{E},
+\end{align*}
+
+\end_inset
+
+where
+\begin_inset Formula 
+\begin{align*}
+\mathbf{S} & =\left[\begin{array}{cc}
+s_{B\rightarrow B} & 1-s_{L\rightarrow L}\\
+1-s_{B\rightarrow B} & s_{L\rightarrow L}
+\end{array}\right].
+\end{align*}
+
+\end_inset
+
+According to standard results, the autocorrelation 
+\begin_inset Formula $\rho$
+\end_inset
+
+ in patch state is given by 
+\begin_inset Formula $\rho=1-s_{B\rightarrow B}-s_{L\rightarrow L}$
+\end_inset
+
+, while the relative frequency 
+\begin_inset Formula $p_{B}$
+\end_inset
+
+ of the large patch is given by 
+\begin_inset Formula $p_{B}=\left(1-s_{L\rightarrow L}\right)\left/\left(1-s_{L\rightarrow L}+1-s_{B\rightarrow B}\right)\right.$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Selection gradients
+\end_layout
+
+\begin_layout Standard
+According to a standard result 
+\begin_inset CommandInset citation
+LatexCommand citep
+before "e.g.,"
+key "Taylor1996a"
+literal "false"
+
+\end_inset
+
+, we have
+\begin_inset Formula 
+\begin{align*}
+\Delta z_{L} & =\sum_{i,j}v_{i}u_{j}\left(\frac{\partial W}{\partial z_{L}^{\bullet}}+r_{\mathrm{focal\rightarrow}\mathrm{local}}\frac{\partial W}{\partial z_{L}^{\circ}}\right)\\
+\Delta z_{B} & =\sum_{i,j}v_{i}u_{j}\left(\frac{\partial W}{\partial z_{L}^{\bullet}}+r_{\mathrm{focal\rightarrow}\mathrm{local}}\frac{\partial W}{\partial z_{L}^{\circ}}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Reproductive values and stable class frequencies
+\end_layout
+
+\begin_layout Standard
+Reproductive values can be calculated by taking the dominant left eigenvector
+ of the matrix 
+\end_layout
+
+\begin_layout Subsection
+Relatedness coefficients
+\end_layout
+
+\begin_layout Standard
+The coefficient of consanguinity 
+\begin_inset Formula $Q_{X}$
+\end_inset
+
+ between two randomly sampled adult breeders in a patch in state 
+\begin_inset Formula $X\in\{B,L\}$
+\end_inset
+
+ is given by the following recursions:
+\begin_inset Formula 
+\begin{align*}
+Q_{L,t+1} & =q_{L\rightarrow L}Q_{L\rightarrow L,t}^{\prime}+q_{B\rightarrow L}Q_{B\rightarrow L,t}^{\prime}\\
+Q_{B,t+1} & =q_{L\rightarrow B}Q_{L,t}^{\prime}+q_{B\mid B}Q_{B,t}^{\prime}.
+\end{align*}
+
+\end_inset
+
+Here, 
+\begin_inset Formula $Q_{X\rightarrow Y}^{\prime}$
+\end_inset
+
+ reflects the coefficient of consanguinity among two randomly sampled adult
+ breeders in a patch in state 
+\begin_inset Formula $X$
+\end_inset
+
+ before it changes to environment 
+\begin_inset Formula $Y$
+\end_inset
+
+.
+ Starting with 
+\begin_inset Formula $Q_{L\rightarrow L,t}^{\prime}$
+\end_inset
+
+, the coefficient of consanguinity between two randomly sampled adult breeders
+ in a little patch that remains a little patch is given by the recursion
+\begin_inset Formula 
+\begin{align*}
+Q_{L\rightarrow L,t}^{\prime} & =\left(1-\mu_{L}\left(z_{L},z_{L}\right)\right)^{2}Q_{L,t}\\
+ & +2\left(1-\mu_{L}\left(z_{L},z_{L}\right)\right)\mu_{L}\left(z_{L},z_{L}\right)g_{L\rightarrow L}\left(\frac{1}{n_{L}}+\frac{n_{L}-1}{n_{L}}Q_{L,t}\right)\\
+ & +\mu_{L}\left(z_{L},z_{L}\right)^{2}g_{L\rightarrow L}^{2}\left(\frac{1}{n_{L}}+\frac{n_{L}-1}{n_{L}}Q_{L,t}\right).
+\end{align*}
+
+\end_inset
+
+Here, 
+\begin_inset Formula $g_{L\rightarrow L}$
+\end_inset
+
+ reflects the probability that the sampled juvenile who is recruited to
+ the little patch (which remains little) is philopatric:
+\begin_inset Formula 
+\begin{align*}
+g_{L\rightarrow L} & =\frac{n_{L}\mu_{L}\left(z_{L},z_{L}\right)\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)}{n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)+p_{B}n_{B}\left(1-d_{B}\right)f\left(z_{B},z_{B}\right)+p_{L}n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)}.
+\end{align*}
+
+\end_inset
+
+Next, 
+\begin_inset Formula $Q_{B\rightarrow L}^{\prime}$
+\end_inset
+
+ reflects the coefficient of consanguinity between two randomly sampled
+ adult breeders in a little patch that was previously a big patch:
+\begin_inset Formula 
+\begin{align*}
+Q_{B\rightarrow L}^{\prime} & =\sum_{k=0}^{n_{B}}\mathcal{P}\left(k\mid n_{B},\mu_{B}\left(z_{B},z_{B}\right)\right)\left[\delta_{k\leq n_{L}}\left(\frac{k}{n_{L}}\frac{k-1}{n_{L}-1}Q_{B,t}\right)+\left(1-\delta_{k\leq n_{L}}\right)Q_{B,t}\right.\\
+ & +\delta_{k\leq n_{L}-1}g_{B\rightarrow L}(k)\left(\frac{k}{n_{L}}\frac{n_{L}-\left(k-1\right)}{n_{L}-1}+\frac{n_{L}-k}{n_{L}}\frac{k}{n_{L}-1}\right)\left(\frac{1}{k}+\frac{k-1}{k}Q_{B,t}\right)\\
+ & \left.+\delta_{k\leq n_{L}-2}g_{B\rightarrow L}(k)^{2}\left(\frac{n_{L}-k}{n_{L}}\frac{n_{L}-k-1}{n_{L}-1}\right)\left(\frac{1}{n_{B}}+\frac{n_{B}-1}{n_{B}}Q_{B,t}\right)\right].
+\end{align*}
+
+\end_inset
+
+Note that the recursion in the second line involves the term 
+\begin_inset Formula $[1/k+(k-1)/k\times Q_{B,t}]$
+\end_inset
+
+ which reflects the probability that one of the sampled individuals is either
+ the newborn's parent or alternatively a relative.
+ By contrast, the recursion in the third line involves the term 
+\begin_inset Formula $[1/n_{B}+(n_{B}-1)/n_{B}\times Q_{B,t}]$
+\end_inset
+
+, reflecting the probability that both sampled newborns share the same parent
+ (which is one of the 
+\begin_inset Formula $n_{B}$
+\end_inset
+
+ parents that previously lived in the patch) or do not share the same parent
+ (with probability 
+\begin_inset Formula $(n_{B}-1)/n_{B}$
+\end_inset
+
+, in which case the coefficient of consanguinity is given by 
+\begin_inset Formula $Q_{B,t}$
+\end_inset
+
+.
+ The function 
+\begin_inset Formula $g_{B\rightarrow L}(k)$
+\end_inset
+
+ reflects the probability that the sampled juvenile who is recruited to
+ a previously big, but now little patch with 
+\begin_inset Formula $k<n_{L}$
+\end_inset
+
+ surviving adults is philopatric to the local patch and is given by
+\begin_inset Formula 
+\begin{align*}
+g_{B\rightarrow L}\left(k\right) & =\frac{\left(n_{L}-k\right)\left(1-d_{B}\right)f\left(z_{B},z_{B}\right)}{n_{B}\left(1-d_{B}\right)f\left(z_{B},z_{B}\right)+p_{B}n_{B}\left(1-d_{B}\right)f\left(z_{B},z_{B}\right)+p_{L}n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)}\quad k<n_{L}.
+\end{align*}
+
+\end_inset
+
+Next, 
+\begin_inset Formula $Q_{L\rightarrow B}^{\prime}$
+\end_inset
+
+ reflects the coefficient of consanguinity between two randomly sampled
+ adult breeders in a big patch that was previously a little patch:
+\begin_inset Formula 
+\begin{align*}
+Q_{L\rightarrow B}^{\prime} & =\sum_{k=0}^{n_{L}}\mathcal{P}\left(k\mid n_{L},\mu_{L}\left(z_{L},z_{L}\right)\right)\left[\frac{k}{n_{B}}\frac{k-1}{n_{B}-1}Q_{L,t}\right.\\
+ & +g_{L\rightarrow B}(k)\left(\frac{k}{n_{B}}\frac{n_{B}-\left(k-1\right)}{n_{B}-1}+\frac{n_{B}-k}{n_{B}}\frac{k}{n_{B}-1}\right)\left(\frac{1}{k}+\frac{k-1}{k}Q_{L,t}\right)\\
+ & \left.+g_{L\rightarrow B}(k)^{2}\left(\frac{n_{B}-k}{n_{B}}\frac{n_{B}-k-1}{n_{B}-1}\right)\left(\frac{1}{n_{L}}+\frac{n_{L}-1}{n_{L}}Q_{L,t}\right)\right],
+\end{align*}
+
+\end_inset
+
+where 
+\begin_inset Formula $g_{L\rightarrow B}(k)$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\begin{align*}
+g_{L\rightarrow B}(k) & =\frac{\left(n_{B}-n_{L}+k\right)\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)}{n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)+p_{B}n_{B}\left(1-d_{B}\right)f\left(z_{B},z_{B}\right)+p_{L}n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)}.
+\end{align*}
+
+\end_inset
+
+Finally, 
+\begin_inset Formula $Q_{B\rightarrow B}^{\prime}$
+\end_inset
+
+ is given by
+\begin_inset Formula 
+\begin{align*}
+Q_{B\rightarrow B}^{\prime} & =\left[1-\mu_{B}\left(z_{B},z_{B}\right)\right]^{2}Q_{B,t}\\
+ & +2\mu_{B}\left(z_{B},z_{B}\right)\left[1-\mu_{B}\left(z_{B},z_{B}\right)\right]g_{B\rightarrow B}\left(\frac{1}{n_{B}}+\frac{n_{B}-1}{n_{B}}Q_{B,t}\right)\\
+ & +\mu_{B}\left(z_{B},z_{B}\right)^{2}g_{B\rightarrow B}\left(\frac{1}{n_{B}}+\frac{n_{B}-1}{n_{B}}Q_{B,t}\right),
+\end{align*}
+
+\end_inset
+
+where
+\begin_inset Formula 
+\begin{align*}
+g_{B\rightarrow B} & =\frac{n_{B}\mu_{B}\left(z_{B},z_{B}\right)\left(1-d_{B}\right)f\left(z_{B},z_{B}\right)}{n_{B}\left(1-d_{B}\right)f\left(z_{B},z_{B}\right)+p_{B}n_{B}\left(1-d_{B}\right)f\left(z_{B},z_{B}\right)+p_{L}n_{L}\left(1-d_{L}\right)f\left(z_{L},z_{L}\right)}.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "~/Projects/databases/transgenerational"
+options "bram"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
