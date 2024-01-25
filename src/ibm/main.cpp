@@ -6,6 +6,4 @@ int main(int argc, char **argv)
     Parameters params;
 
     PatchSize sim(params);
-
-    sim.run();
 }

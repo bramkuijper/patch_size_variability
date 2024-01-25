@@ -17,6 +17,8 @@ class Individual
         Individual(Individual const &parent,
                 std::mt19937 &rng_r,
                 Parameters const &par);
+
+        void operator=(Individual const &other);
 };
 
 #endif
