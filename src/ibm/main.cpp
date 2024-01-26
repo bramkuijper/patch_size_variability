@@ -9,7 +9,8 @@ int main(int argc, char **argv)
     params.n[large] = std::stoi(argv[3]);
     params.baseline_mortality = std::stod(argv[4]);
     params.Bfec = std::stod(argv[5]);
-    params.base_name = argv[6];
+    params.Cfec = std::stod(argv[6]);
+    params.base_name = argv[7];
 
     PatchSize sim(params);
 }
