@@ -3,13 +3,15 @@
 import numpy as np
 import datetime
 
-baseline_mortality = np.linspace(0.01,1.0,num=20)
+baseline_mortality = np.linspace(0.01,1.0,num=30)
 
 n = [[5,5]]
 
 d = 0.5
 
-bfec = np.linspace(0.01,14,num=20)
+cfec = 0.01
+
+bfec = np.linspace(0.001,0.14,num=30)
 
 exe = "patch_size.exe"
 
@@ -33,6 +35,7 @@ for mort_i in baseline_mortality:
                     f"{n_i[1]} " +\
                     f"{mort_i} " +\
                     f"{bfec_i} " +\
+                    f"{cfec} " +\
                     f"{base_name_i} "
                     )
 
