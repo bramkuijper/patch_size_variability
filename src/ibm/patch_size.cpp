@@ -27,6 +27,8 @@ PatchSize::PatchSize(Parameters const &params) :
         survive();
 
         change_size();
+        
+        express_help();
 
         fill_vacancies();
 
@@ -93,7 +95,7 @@ void PatchSize::fill_vacancies()
     std::vector < std::pair<unsigned, unsigned> > remote_breeders;
 
     // whole bunch of aux variables
-    double sum_local, sum_remote, fecundity, local_weighting, p_local;
+    double sum_local, sum_remote, fecundity, local_weighting, p_local, freq_current_patch;
 
     unsigned n_new_breeders, remote_patch_id, remote_breeder_id;
 
@@ -165,9 +167,11 @@ void PatchSize::fill_vacancies()
 
                     remote_patch_type = metapop[remote_patch_id].patch_type;
 
+                    freq_current_patch = remote_patch_type == small : 1.0 - p_large : p_large;
+
                     // we need to weigh this individual with the frequency
                     // that it would be encountered, which is p_patch_type * n 
-                    fecundity = par.d * (double) par.n[remote_patch_type] /
+                    fecundity = par.d * freq_current_patch * (double) par.n[remote_patch_type] /
                         ((1.0 - p_large) * par.n[small] + p_large * par.n[large])
                             * (1.0 - metapop[remote_patch_id].breeders[
                                 remote_breeder_id
